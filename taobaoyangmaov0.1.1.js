@@ -13,7 +13,7 @@ setScreenMetrics(width, height);
 // 浏览速度速度
 var speed = 1;
 
-dialogs.alert("请确认无障碍和悬浮窗权限已开启\n作者:白晓森\n版本号：v0.1");
+dialogs.alert("请确认无障碍和悬浮窗权限已开启\n自用修改版\n版本号：v0.1");
 menu: while (true) {
     var choose = dialogs.select("请根据你的手机性能(卡不卡)以及网速选择速度", "都挺好的,整个快速的", "一般吧,正常执行就好", "网速有点差,稍微慢点吧", "我手机很砖,整个最慢的吧");
     switch (choose) {
@@ -47,9 +47,9 @@ auto.waitFor();
 
 sleep(1000 * speed);
 //打开活动页面
-log("正在打开淘宝");
-launch("com.taobao.taobao");
-sleep(1000 * speed);
+// log("正在打开淘宝");
+// launch("com.taobao.taobao");
+// sleep(1000 * speed);
 log("请手动点进养猫活动页面")
 className("android.widget.Button").text("赚喵币").waitFor()
 

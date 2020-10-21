@@ -1,5 +1,6 @@
+// keep reading v1.1 -- finished
 var keep_time = 61
-dialogs.alert("当当自用刷阅读时间脚本\n自用版本号：v1.1");
+dialogs.alert("当当自用刷阅读时间脚本\n请确认已进入具体书籍界面\n自用版本号：v1.1");
 menu: while (true) {
     var choose = dialogs.select("请选择阅读时间", "10", "20", "30", "45");
     switch (choose) {
@@ -31,25 +32,29 @@ menu: while (true) {
 console.show();
 auto.waitFor();
 
-launch("com.dangdang.reader");
+//launch("com.dangdang.reader");
 
-sleep(2000);
+console.log("开始阅读");
 
-className("android.widget.TextView").text("书桌").click()
-sleep(1000);
-
-id("shelf_list").findOne().children().forEach(child => {
-  var target = child.findOne(id("click_view"));
-  target.click();
-  });
-
-console.log("进入具体书籍界面...");
-
-toast("开始阅读");
+function wakeup_swipe() {
+    
+    device.wakeUp();
+    swipe(850,1200,250,1200,500);
+    sleep(10000);
+    swipe(850,1200,250,1200,500);
+    sleep(10000);
+    swipe(850,1200,250,1200,500);
+    sleep(10000);
+    swipe(250,1200,850,1200,500);
+    sleep(10000); 
+    swipe(250,1200,850,1200,500);
+    sleep(10000); 
+    swipe(250,1200,850,1200,500);
+    sleep(10000); 
+}
 
 
 function start_task_reading() {
-    sleep(2000);
 
     var count = 0;
 

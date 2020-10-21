@@ -1,3 +1,4 @@
+// tb keep_cat.js
 var speed = 1;
 
 menu: while (true) {
